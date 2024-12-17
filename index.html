@@ -12,113 +12,159 @@
             padding: 0;
             background-color: #FFFCF2;
         }
+
+        /* Navbar */
         .navbar {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center; /* Center navbar links for better alignment */
             padding: 10px;
+            background-color: #FFF; /* Optional: Add background color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
         }
         .navbar a {
             color: black;
-            padding: 14px 20px;
+            padding: 10px 15px;
             text-decoration: none;
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
+            font-weight: 500;
         }
         .navbar a:hover {
             text-decoration: underline;
             color: #C58354;
         }
+
+        /* Header */
         .header {
             display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
             align-items: center;
-            padding: 50px;
+            padding: 20px;
+            gap: 20px; /* Adds space between items */
         }
         .header .content {
-            padding-left: 190px;
-            margin-right: 50px;
+            flex: 1;
             max-width: 600px;
+            margin: 0 auto; /* Centers content on smaller screens */
+            text-align: center; /* Center-align for better balance */
         }
         .header .name {
-            font-size: 70px;
+            font-size: 50px;
             font-weight: bold;
             margin-bottom: 10px;
-            white-space: nowrap;
+            white-space: normal; /* Allows wrapping for long names */
         }
         .header .photo {
-            width: 600px;
-            height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            flex: 1;
+            width: 100%;
+            max-width: 400px;
+            height: auto; /* Adjusts height proportionally */
+            margin: 0 auto;
         }
         .header .photo img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Maintains aspect ratio */
             object-fit: cover;
+            border-radius: 50%; /* Makes the photo circular */
         }
-        .phrases {
-            font-size: 30px;
-            height: 40px;
-            overflow: hidden;
-        }
-        .description {
-            font-size: 20px;
-            margin-top: 30px;
-            line-height: 1.5;
-        }
-        .resume-link {
-            font-size: 18px;
-            margin-top: 20px;
-            display: block;
-        }
+
+        /* Work Section */
         .work {
-            padding: 50px;
+            padding: 20px;
         }
         .work h2 {
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 20px;
+            text-align: center;
         }
         .work .photo-area {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap; /* Wraps projects on smaller screens */
+            gap: 20px; /* Adds space between items */
+            justify-content: center; /* Centers content */
         }
-        .work .photo-area .photo {
-            width: 45%;
-            padding: 10px; /* Added padding around each photo */
+        .work .photo {
+            flex: 1 1 calc(50% - 20px); /* Takes half the width, adjusts for gap */
+            max-width: 300px;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .work .photo-area .photo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensures the image fits within its container */
-            cursor: pointer; /* Change cursor to pointer on hover */
+        .work .photo img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        /* Gallery Section */
         .gallery {
-            padding: 50px;
+            padding: 20px;
         }
         .gallery h2 {
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 20px;
             text-align: center;
         }
         .gallery .photo-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic grid layout */
             gap: 10px;
         }
-        .gallery .photo-grid .photo {
+        .gallery .photo {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: lightgray; /* Placeholder background color */
+            background-color: lightgray; /* Placeholder background */
             padding: 10px;
+            border-radius: 10px; /* Rounded corners for better aesthetics */
         }
-        .gallery .photo-grid .photo img {
+        .gallery .photo img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: cover; /* Ensures the image fits within its container */
+            object-fit: cover;
+        }
+
+        /* Rotating Phrases */
+        .phrases {
+            font-size: 22px;
+            min-height: 75px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: 0.5s;
+            text-align: center; /* Center phrases */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .name {
+                font-size: 40px;
+            }
+            .header .content {
+                padding: 0 20px;
+            }
+            .work .photo {
+                flex: 1 1 100%; /* Full width on smaller screens */
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header .name {
+                font-size: 30px;
+            }
+            .gallery .photo img {
+                object-fit: contain; /* Adjusts to smaller containers */
+            }
+            .phrases {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
