@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #edbb99;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .project-info {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .project-info h2 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .project-info p {
+            margin: 0 0 10px;
+            line-height: 1.6;
+        }
+
+        .project-info .tools {
+            font-style: italic;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                flex-direction: column;
+            }
+
+            .project img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" class="logo">My Portfolio</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="projects.html">Projects</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Project 1 -->
+        <div class="project">
+            <img src="rapair_thumbnail.png" alt="Project 1 Image">
+            <div class="project-info">
+                <h2>AR Computer Building App</h2>
+                <p>This app makes building a computer easy and seamless. Combining video tutorials and AR technologies, your next pc build will be a breeze.</p>
+                <p class="tools">Tools Used: Figma, Swift, JavaScript</p>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <img src="8pt grid showcase.png" alt="Project 2 Image">
+            <div class="project-info">
+                <h2>Match Point</h2>
+                <p>Created a system to reserve sports courts. Never have to wait for a empty court ever again. Also prepare to make new friends, or opponents, using our player match up feature!</p>
+                <p class="tools">Tools Used: Figma, Swift</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

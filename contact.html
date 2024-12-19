@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #FFFCF2;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #edbb99;
+            padding: 10px 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile .info {
+            max-width: 600px;
+        }
+
+        .profile .info h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+        }
+
+        .skills {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skills ul li {
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .linkedin {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .linkedin a {
+            text-decoration: none;
+            color: white;
+            background-color: #0077b5;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar .nav-links {
+                margin-top: 10px;
+            }
+
+            .navbar .nav-links a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <a href="index.html" class="logo">Elizabeth Mazuca</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact</a>
+                <a href="projects.html">Projects</a>
+            </div>
+        </div>
+    <div class="container">
+        <div class="profile">
+            <img src="Mazuca.jpg" alt="Picture of Me!">
+            <div class="info">
+                <h1>Elizabeth Mazuca</h1>
+                <p>Hi, I’m Elizabeth. I am a junior computer science major. I love cooking, gaming, aviation, and working on Ui/Ux designs! Feel free to connect with me!</p>
+            </div>
+        </div>
+
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Figma</li>
+            </ul>
+        </div>
+
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/elizabeth-mazuca-063b1713b/" target="_blank">Connect on LinkedIn</a>
+        </div>
+    </div>
+
+    <script>
+        // Display an alert when link is clicked! :)
+        document.querySelector('.linkedin a').addEventListener('click', function(event) {
+            alert('You are being redirected to LinkedIn.');
+        });
+
+        // JavaScript to add a skill !!!!!!!!!!!!!!!
+        const skillsList = document.querySelector('.skills ul');
+        const newSkill = document.createElement('li');
+        newSkill.textContent = 'Node.js'; 
+        skillsList.appendChild(newSkill);
+    </script>
+</body>
+</html>

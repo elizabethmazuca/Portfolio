@@ -13,132 +13,85 @@
             background-color: #FFFCF2;
         }
 
-        /* Navbar */
+        /* Navbar Styling */
         .navbar {
             display: flex;
-            justify-content: center; /* Center navbar links for better alignment */
-            padding: 10px;
-            background-color: #FFF; /* Optional: Add background color */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+            justify-content: space-between;
+            align-items: center;
+            background-color:#edbb99;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .navbar a {
-            color: black;
-            padding: 10px 15px;
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
             text-decoration: none;
-            text-align: center;
-            font-size: 16px;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
             font-weight: 500;
         }
-        .navbar a:hover {
+        .navbar .nav-links a:hover {
             text-decoration: underline;
             color: #C58354;
         }
 
-        /* Header */
+        /* Header Section */
         .header {
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            flex-wrap: wrap;
             align-items: center;
-            padding: 20px;
-            gap: 20px; /* Adds space between items */
+            padding: 50px 20px;
+            gap: 20px;
         }
         .header .content {
             flex: 1;
             max-width: 600px;
-            margin: 0 auto; /* Centers content on smaller screens */
-            text-align: center; /* Center-align for better balance */
+            margin: 0 auto;
+            text-align: center;
         }
         .header .name {
             font-size: 50px;
             font-weight: bold;
             margin-bottom: 10px;
-            white-space: normal; /* Allows wrapping for long names */
         }
         .header .photo {
             flex: 1;
-            width: 100%;
             max-width: 400px;
-            height: auto; /* Adjusts height proportionally */
             margin: 0 auto;
         }
         .header .photo img {
             width: 100%;
-            height: auto; /* Maintains aspect ratio */
-            object-fit: cover;
-            border-radius: 50%; /* Makes the photo circular */
-        }
-
-        /* Work Section */
-        .work {
-            padding: 20px;
-        }
-        .work h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .work .photo-area {
-            display: flex;
-            flex-wrap: wrap; /* Wraps projects on smaller screens */
-            gap: 20px; /* Adds space between items */
-            justify-content: center; /* Centers content */
-        }
-        .work .photo {
-            flex: 1 1 calc(50% - 20px); /* Takes half the width, adjusts for gap */
-            max-width: 300px;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .work .photo img {
-            width: 100%;
             height: auto;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
         }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 20px;
-        }
-        .gallery h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .gallery .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic grid layout */
-            gap: 10px;
-        }
-        .gallery .photo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: lightgray; /* Placeholder background */
-            padding: 10px;
-            border-radius: 10px; /* Rounded corners for better aesthetics */
-        }
-        .gallery .photo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-        }
-
-        /* Rotating Phrases */
         .phrases {
             font-size: 22px;
-            min-height: 75px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            margin-top: 10px;
+            height: 30px;
             overflow: hidden;
-            transition: 0.5s;
-            text-align: center; /* Center phrases */
+        }
+        .description {
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        .resume-link {
+            font-size: 18px;
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #C58354;
         }
 
         /* Responsive Design */
@@ -146,31 +99,34 @@
             .header .name {
                 font-size: 40px;
             }
-            .header .content {
-                padding: 0 20px;
-            }
-            .work .photo {
-                flex: 1 1 100%; /* Full width on smaller screens */
-                max-width: none;
-            }
         }
-
         @media (max-width: 480px) {
+            .navbar .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
             .header .name {
                 font-size: 30px;
-            }
-            .gallery .photo img {
-                object-fit: contain; /* Adjusts to smaller containers */
-            }
-            .phrases {
-                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div class="navbar">
+        <a href="index.html" class="logo">Elizabeth Mazuca</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="projects.html">Projects</a>
+        </div>
     </div>
+
+    <!-- Header Section -->
     <div class="header">
         <div class="content">
             <div class="name">Elizabeth Mazuca</div>
@@ -184,34 +140,7 @@
             <img src="profile.png" alt="Elizabeth Mazuca">
         </div>
     </div>
-    <div class="work">
-        <h2>My Work</h2>
-        <div class="photo-area">
-            <div class="photo">
-                <a href="https://docs.google.com/presentation/d/1-R1EPXMiGOpNw_GfDbznHEb-JjOGJjzPFuSaPAFdqlw/present#slide=id.p">
-                    <img src="CruiseThumbnail.JPG" alt="Cruise Thumbnail">
-                </a>
-            </div>
-            <div class="photo"></div>
-        </div>
-    </div>
-    <div class="gallery">
-        <h2>Gallery</h2>
-        <div class="photo-grid">
-            <div class="photo">
-                <img src="fish.JPG" alt="Gallery Photo 1">
-            </div>
-            <div class="photo">
-                <img src="Vista.JPG" alt="Gallery Photo 2">
-            </div>
-            <div class="photo">
-                <img src="Unify.JPG" alt="Gallery Photo 3">
-            </div>
-            <div class="photo">
-                <img src="char.jpg" alt="Gallery Photo 4">
-            </div>
-        </div>
-    </div>
+
     <script>
         const phrases = document.getElementById('phrases');
         const phraseArray = [
@@ -221,6 +150,7 @@
             'loves cooking pork kakuni',
             'participates in taekwondo Sundays',
             'has enjoyed 100+ animes'
+
         ];
         let currentPhrase = 0;
 
@@ -230,10 +160,11 @@
         }
 
         setInterval(rotatePhrases, 2000);
-        rotatePhrases(); // Initial call to display the first phrase
+        rotatePhrases(); // Initial call
     </script>
 </body>
 </html>
+
 
 
 
